@@ -8,5 +8,5 @@ data_sim<-function(times,pars=c(sig2,S)){
 		 hold<-MCsim_sister(times[i],pars=pars)
 		 res.mat[i,]<-c(hold[[1]],hold[[2]],(hold[[1]]-hold[[2]]))
 	}
-	return(cbind(times,res.mat))
+	return(data.frame(times,res.mat))
 	}

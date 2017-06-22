@@ -34,11 +34,6 @@ logLH_MClin_sis_zerointercept<-function(DIST,TIME,GRAD,pars){
 		}
 }
 
-
-
-
-###BM functions just to make sure things are behaving as in EvoRAG
-###NOTE that the LH that is acheived, and parameter values, are all exactly 2X the ones from EvoRAG (divided by two because of two branches)
 logLH_BMsis<-function(DIST,TIME, pars){
 	Vi<-MC_variance_sis(times=TIME, pars=c(b=exp(pars[1]),s=0))$variance  ##first, calculate Vi for given pars and times
 	lnPi<-log(exp(-(DIST^2)/(2*Vi)))-0.5*log(2*pi*Vi)
